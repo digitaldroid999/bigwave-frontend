@@ -1,0 +1,344 @@
+@media only screen and (max-width: 600px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    color: white;
+    background: linear-gradient(90.64deg, #1c1d2c 1.63%, #181c3e 99.76%);
+    z-index: -99;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .header-logo {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .header-logo :first-child {
+    width: 6vw;
+    height: 6vw;
+    padding-left: 4vw;
+  }
+  .user-mobile-show {
+    width: 6vw;
+    height: 6vw;
+    padding-right: 4vw;
+    display: block;
+  }
+
+  .user-sign {
+    display: none;
+  }
+  .user-timezone {
+    display: none;
+  }
+  .header-nav-mobile {
+    width: 100%;
+    margin-top: 10vh;
+    height: 6vh;
+    background: linear-gradient(
+      270.06deg,
+      #455565 0.05%,
+      #78848f 52.43%,
+      #bac0c4 99.95%
+    );
+    display: flex;
+    justify-content: center;
+    position: relative; /* Rectangle 33 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-item-change-mode {
+    width: 30vw;
+    padding: 1vh 2vw;
+    background: linear-gradient(
+      94.71deg,
+      rgba(85, 89, 96, 0.7) 1.13%,
+      rgba(105, 123, 155, 0.7) 100%
+    );
+    border: 0.7px solid rgba(255, 255, 255, 0.21);
+    border-radius: 10px;
+    font-family: "Roboto";
+    color: white;
+    font-style: Medium;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3.8vw;
+  }
+  .nav-item-change-mode :first-child {
+    margin-right: 8px;
+  }
+  .user-timezone-mobile {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-right: 2.3vw;
+  }
+  /* mobile-Landing Customization */
+  .Landing-mobile {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .landing-img-mobile {
+    width: 100%;
+    height: 16vh;
+    position: relative;
+  }
+  .landing-img-mobile img {
+    width: 100%;
+    height: 100%;
+  }
+  .landing-body {
+    width: 100%;
+    min-height: 70vh;
+
+    background: #00031a;
+    background-image: radial-gradient(
+        circle at 2vw 25vh,
+        rgba(47, 60, 245, 0.226),
+        transparent 12%
+      ),
+      radial-gradient(
+        circle at 100% calc(100% - 30vh),
+        rgba(90, 120, 255, 0.24),
+        transparent 15%
+      );
+
+    background-size: 100% 136vh; /* each tile’s width/height */
+    background-repeat: repeat; /* repeat across page */
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 40vh;
+  }
+  .mobile-login-button {
+    width: 100%;
+    background: linear-gradient(270.85deg, #007aff 0.12%, #5493f7 99.57%);
+    height: 8vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  .landing-nav-mobile {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(
+      270.06deg,
+      #455565 0.05%,
+      #78848f 52.43%,
+      #bac0c4 99.95%
+    );
+  }
+  .landing-nav-mobile-item {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+    font-size: 13px;
+    align-content: center;
+  }
+  .landing-nav-mobile-item :first-child {
+    height: 4.5vh;
+  }
+  .landing-nav-mobile-item span {
+    width: 100%;
+  }
+
+  .footer {
+    height: 36vh;
+    margin-top: -36vh;
+  }
+  .footer-logo {
+    width: 100%;
+    height: 7vh;
+    padding: 1vw;
+    margin-bottom: 1vh;
+    position: relative;
+  }
+  .footer-logo :last-child {
+    width: 7vw;
+    height: 7vw;
+    background-size: 100% 100%;
+  }
+  .footer-others {
+    width: 90%;
+    padding: 1vw;
+  }
+  .footer-copyright {
+    width: 100%;
+    font-family: Roboto;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1%;
+    text-align: center;
+    color: #ffffffbf;
+  }
+  .landing-games-mobile {
+    margin-top: 15px;
+    width: 100%;
+    height: 25vh;
+    background: linear-gradient(
+      90deg,
+      rgba(68, 76, 79, 0.4) 0%,
+      rgba(140, 156, 162, 0.4) 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .landing-games-list-title {
+    width: 95%;
+    height: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vh 0;
+  }
+  .landing-games-list-title :first-child {
+    color: white;
+    font-family: Roboto;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    /* leading-trim: NONE; */
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+  .landing-games-list-title :first-child img {
+    width: 6.5vw;
+    margin-right: 7px;
+  }
+  .landing-game-btn-seeMore {
+    width: 20vw;
+    height: 3vh;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .landing-games-list-one-mobile {
+    /* height: 18vh;
+    display: flex;
+    overflow-x: auto; */
+    display: flex; /* make it a flex container */
+    flex-wrap: nowrap; /* do NOT wrap to next line */
+    overflow-x: auto; /* allow horizontal scroll */
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    gap: 5px;
+    height: 18vh;
+    position: relative;
+    /* padding: 0 1rem; */
+  }
+
+  .landing-games-list-one-mobile::-webkit-scrollbar-thumb{
+    height: 2px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+  }
+  .landing-games-list-one-mobile::-webkit-scrollbar{
+    height: 2px;
+    background-color: #00031a00;
+  }
+  .landing-game-one {
+    flex: 0 0 auto; /* prevent flex shrink, let it keep its width */
+    width: 29vw; /* fixed card width */
+    height: 16vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    background-color: #455565;
+    color: white;
+    /* border-radius: 10px; */
+  }
+  .landing-game-one img {
+    width: 100%;
+    height: 13vh;
+  }
+  .landing-game-one span {
+    width: 100%;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 8px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+  }
+  .landing-games-mobile::before{
+    content: "";
+    position: absolute;
+    width: 16vw;
+    height: 16vh;
+    top: 6vh;
+    left: 0;
+    z-index: 99;
+    background: linear-gradient(270deg, #00000000 9.72%, #111E36 100%);
+  }
+  .landing-games-mobile::after{
+    content: "";
+    position: absolute;
+    width: 16vw;
+    height: 16vh;
+    top: 6vh;
+    right: 0;
+    background: linear-gradient(270deg, #111E36 9.72%, #00000000 100%);
+  }
+  /* Hidden PC modes */
+
+  .header-nav {
+    display: none;
+  }
+  .Landing {
+    display: none;
+  }
+  .footer-links {
+    display: none;
+  }
+}
