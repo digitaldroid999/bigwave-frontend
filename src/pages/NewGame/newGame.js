@@ -3,7 +3,7 @@ import React from "react";
 import { newGamesData } from "./components/tempData";
 export default function NewGame(){
     return(
-        <div>
+        <>
             <div className='landing-img'>
                 <img src='/img/newgameback.png' alt='landingImage' />
             </div>
@@ -30,6 +30,6 @@ export default function NewGame(){
                     <img src="/img/image 3.png" alt="gamecards"/>
                 </div>
             </div>
-        </div>
+        </>
     )
 }

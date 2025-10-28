@@ -530,7 +530,6 @@
     align-items : center;
     color: white;
     font-family: 'Roboto';
-
 }
 
 .menu-item-mobile svg{
@@ -545,5 +544,8 @@
     display: none;
 }
 .Landing-mobile{
+    display: none;
+}
+.menu-item-mobile-mode{
     display: none;
 }

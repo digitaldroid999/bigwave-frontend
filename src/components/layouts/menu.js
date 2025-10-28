@@ -75,6 +75,10 @@ export default function Menu( { showHandle, setShowHandle } ) {
                     <CiMobile3 />
                     Mobile Version
                 </div>
+                <div className="menu-item-mobile-mode">
+                    <img src="/icons/pc.svg" alt="pc"/>
+                    PC Version
+                </div>
             </div>
 
         </div>
