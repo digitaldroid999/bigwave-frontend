@@ -34,4 +34,54 @@ const liveData = [
     }
 ]
 
-module.exports = { newGamesData, slotlist, liveData }
+const liveData1 = [
+    {
+        name : 'EVOLUTION GAME',
+        image : '/img/mobileCards/live1.png'
+    },
+    {
+        name : 'ASIA GAMING',
+        image : '/img/mobileCards/live2.png'
+    },
+    {
+        name : 'PRAMAGIC PLAY',
+        image : '/img/mobileCards/live3.png'
+    },
+    {
+        name : 'GAMEPLAY',
+        image : '/img/mobileCards/live4.png'
+    }
+]
+
+const slotlist1 = [
+    {
+        image : '/img/mobileCards/slot1.png',
+        name : 'OZASHIKI SPIN'
+    },
+    {
+        image : '/img/mobileCards/slot2.png',
+        name : "PRAMAGIC PLAY"
+    },
+    {
+        image : '/img/mobileCards/slot3.png',
+        name : "PLAUN' GO"
+    },
+    {
+        image : '/img/mobileCards/slot4.png',
+        name : "BOONGO"
+    },
+    {
+        image : '/img/mobileCards/slot5.png',
+        name : "RELAX GAMING"
+    },
+    {
+        image : '/img/mobileCards/slot1.png',
+        name :  "RELAX GAMING"
+    },
+    {
+        image : '/img/mobileCards/slot2.png',
+        name : "REDTIGER"
+    }
+] ;
+
+module.exports = { newGamesData, slotlist, liveData, slotlist1, liveData1 }

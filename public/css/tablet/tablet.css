@@ -1,0 +1,13 @@
+@media only screen and (max-width: 1024px) {
+
+
+
+
+/* -----------------------HIDE IN TABLET------------------- */
+    .user-sign{
+        display: none;
+    }
+    .nav-item-mobile{
+        display: none;
+    }
+}

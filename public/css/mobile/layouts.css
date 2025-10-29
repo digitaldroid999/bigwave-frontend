@@ -1,4 +1,7 @@
 @media only screen and (max-width: 600px) {
+  .page-body {
+    padding-bottom: 40vh;
+  }
   .header {
     display: flex;
     justify-content: space-between;
@@ -55,7 +58,7 @@
 
   .nav-item-change-mode {
     width: 30vw;
-    padding: 1vh 2vw;
+    padding: 0.5vh 2vw;
     background: linear-gradient(
       94.71deg,
       rgba(85, 89, 96, 0.7) 1.13%,
@@ -66,7 +69,7 @@
     font-family: "Roboto";
     color: white;
     font-style: Medium;
-    font-size: 14px;
+    font-size: 3.6vw;
     font-weight: 500;
     line-height: 100%;
     display: flex;
@@ -83,12 +86,16 @@
     color: white;
     margin-right: 2.3vw;
   }
+  .timezone-time{
+    font-size: 12px;
+  }
   /* mobile-Landing Customization */
   .Landing-mobile {
     display: flex;
     flex-wrap: wrap;
   }
   .landing-img-mobile {
+    display: block;
     width: 100%;
     height: 16vh;
     position: relative;
@@ -418,7 +425,7 @@
   .user-sign-btn-menu .btn_login {
     width: 45%;
     max-width: 200px;
-    padding: 12px;
+    padding: 5px;
     margin: 1vh 1vw;
     position: relative;
     background: linear-gradient(90.64deg, #1c1d2c 1.63%, #181c3e 99.76%);
@@ -447,7 +454,7 @@
     background-clip: text;
     font-size: 16px;
   }
-
+  /* ......................................................................................... */
   .MobileVersion-Menu {
     width: 80%;
     margin-top: 2vh;
@@ -503,7 +510,323 @@
     height: 5vw;
     padding-right: 2vw;
   }
+  /* NEW GAME---------------------------------------------------------------------------------- */
+  .page-title-mobile {
+    display: block;
+    background: linear-gradient(90.81deg, #00b2ff 0.46%, #00ffff 50.37%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: "Bakbak One";
+    font-weight: 400;
+    font-style: "Regular";
+    font-size: 20px;
+    line-height: 56px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: capitalize;
+  }
+  .newgame-title {
+    padding: 15px 0;
+    width: 100%;
+    height: 3.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .newgame-items-mobile {
+    width: 90%;
+    /* background-color: wheat; */
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    position: relative;
+  }
+  .newgame-items-mobile::-webkit-scrollbar {
+    height: 2px;
+    display: none;
+  }
+  .newgame-items-mobile-view {
+    /* width: 100%; */
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .newgame-item-mobile {
+    position: relative;
+    width: 31vw;
+    height: 6.8vh;
+    margin-right: 1%;
+    background-color: #141b22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .newgame-item-mobile :first-child {
+    display: flex;
+    justify-content: center;
+    text-wrap: nowrap;
+    width: 100%;
+    color: #00b2ff;
+    font-family: "Bakbak One";
+    font-weight: 400;
+    font-style: "Regular";
+    font-size: 12px;
+    /* line-height: 30px; */
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: capitalize;
+  }
+  .newgame-item-mobile :last-child {
+    width: 100%;
+    color: white;
+    font-family: "Bakbak One";
+    font-weight: 400;
+    font-size: 12px;
+    /* leading-trim: NONE; */
+    /* line-height: 32px; */
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .newgame-item-mobile:hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* padding: 3px; */
+    background: linear-gradient(
+      135deg,
+      #00ffff 0%,
+      transparent 20%,
+      transparent 80%,
+      #00ffff 100%
+    );
+    /* -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0); */
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: game-item-hover 0.5s ease forwards;
+    /* filter: blur( 5px ); */
+  }
+  .newgames-cards-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+  }
+  .newgames-cards-mobile img {
+    width: 100%;
+  }
+  /* -----------SLOT */
+
+  .slot-mobile-cards {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2vh;
+  }
+  .slot-mobile-card {
+    width: 94vw;
+    height: 30vh;
+    position: relative;
+    border-radius: 2.08vw;
+    overflow: hidden;
+    margin-bottom: 2vh;
+  }
+
+  .card-background {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 24vh;
+    border-radius: 2.08vw;
+    object-fit: cover;
+    position: absolute;
+  }
+
+  .mobile-card-doll1 {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    max-width: 70%;
+    height: 28vh;
+    width: auto;
+    z-index: 3;
+  }
+  .mobile-card-doll2 {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    max-width: 70%;
+    height: 28vh;
+    width: auto;
+    z-index: 3;
+  }
+
+  .live-mobile-card-doll1 {
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+    max-width: 70%;
+    height: 28vh;
+    width: auto;
+    z-index: 3;
+  }
+  .live-mobile-card-doll2 {
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    max-width: 70%;
+    height: 28vh;
+    width: auto;
+    z-index: 3;
+  }
+  .live-mobile-card-doll3 {
+    position: absolute;
+    bottom: -2px;
+    left: 3px;
+    max-width: 70%;
+    height: 28vh;
+    width: auto;
+    z-index: 3;
+  }
+  .live-mobile-card-doll4 {
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    max-width: 75%;
+    height: 22.5vh;
+    width: auto;
+    z-index: 3;
+  }
+
+  .slot-mobile-card-black {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 24vh;
+    border-radius: 8px;
+    z-index: 1;
+    background: radial-gradient(
+      50% 50% at 53.62% 50%,
+      rgba(163, 137, 179, 0.81) 0%,
+      rgba(86, 121, 163, 0.799201) 53.99%,
+      rgba(34, 79, 167, 0.79) 100%
+    );
+  }
+
+  .slot-mobile-card-black::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #bfecff, #ececec80, #ffffff00);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .slot-mobile-card-content1 {
+    position: absolute;
+    right: 15px;
+    bottom: 6vh;
+    z-index: 4;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 42vw;
+    gap: 15px;
+  }
+  .slot-mobile-card-content2 {
+    position: absolute;
+    left: 15px;
+    bottom: 6vh;
+    z-index: 4;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 42vw;
+    gap: 15px;
+  }
+
+  .slot-mobile-card-title {
+    /* font-size: 18px;
+    font-weight: 700;
+    color: white; */
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+    /* letter-spacing: 1.5px;
+    text-align: center; */
+    width: 42vw;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 5.5vw;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .slot-mobile-play-btn {
+    box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+
+    background: linear-gradient(94.37deg, #0773f1 10.35%, #00b2ff 93.4%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    transform: skewX(-20deg);
+    position: relative;
+  }
+
+  .slot-mobile-play-btn:hover {
+    background: linear-gradient(135deg, #009fd1 0%, #0077b8 100%);
+  }
+
+  .slot-mobile-play-btn > * {
+    transform: skewX(20deg);
+    display: inline-block;
+  }
+
+  .slot-mobile-play-btn .play-icon {
+    font-size: 16px;
+  }
+  .live-games-mobile {
+    display: flex;
+  }
+  /* ------------------------------------------------------------------------------------------- */
   /* Hidden PC modes */
 
   .header-nav {
@@ -516,6 +839,28 @@
     display: none;
   }
   .menu-item-mobile {
+    display: none;
+  }
+  .landing-img {
+    display: none;
+  }
+  .newgame-title :last-child {
+    display: none;
+  }
+  .newgame-items {
+    display: none;
+  }
+  .newgames-cards {
+    display: none;
+  }
+  .page-title {
+    display: none;
+  }
+  .live-games {
+    display: none;
+  }
+  /* --------SLOT-HIDDEN------ */
+  .slot-cards {
     display: none;
   }
 }
