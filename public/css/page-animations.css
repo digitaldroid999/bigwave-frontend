@@ -1,0 +1,383 @@
+/* Page Load Image Animations */
+
+/* ========================================
+   Background Image Animations (Top Banner)
+   ======================================== */
+
+/* Fade in and slide down animation for background images */
+@keyframes fadeInSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to landing background images */
+.landing-img,
+.landing-img-mobile {
+  animation: fadeInSlideDown 0.8s ease-out;
+  overflow: hidden;
+  background-color: #00031a; /* Dark background while images load */
+}
+
+.landing-img img,
+.landing-img-mobile img {
+  animation: fadeInSlideDown 0.8s ease-out;
+  will-change: opacity, transform;
+  background-color: #00031a; /* Dark background while image loads */
+}
+
+/* ========================================
+   Game Card Animations (Grid Items)
+   ======================================== */
+
+/* Fade in and scale up animation */
+@keyframes fadeInScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Slide in from left animation */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right animation */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Rotate and fade in animation */
+@keyframes rotateFadeIn {
+  from {
+    opacity: 0;
+    transform: rotate(-5deg) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Apply animation to game cards container */
+.new-game-cards {
+  animation: fadeInSlideDown 0.6s ease-out;
+}
+
+/* Game card initial state - hidden */
+.game-card {
+  opacity: 0;
+  animation: fadeInScaleUp 0.6s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+/* Staggered animation delays for game cards (already set in component, but ensure it works) */
+.game-card:nth-child(1) { animation-delay: 0.1s; }
+.game-card:nth-child(2) { animation-delay: 0.15s; }
+.game-card:nth-child(3) { animation-delay: 0.2s; }
+.game-card:nth-child(4) { animation-delay: 0.25s; }
+.game-card:nth-child(5) { animation-delay: 0.3s; }
+.game-card:nth-child(6) { animation-delay: 0.35s; }
+.game-card:nth-child(7) { animation-delay: 0.4s; }
+.game-card:nth-child(8) { animation-delay: 0.45s; }
+.game-card:nth-child(9) { animation-delay: 0.5s; }
+.game-card:nth-child(10) { animation-delay: 0.55s; }
+.game-card:nth-child(11) { animation-delay: 0.6s; }
+.game-card:nth-child(12) { animation-delay: 0.65s; }
+
+/* Game card image animation */
+.game-card img {
+  transition: transform 0.3s ease;
+  will-change: transform;
+  background-color: #00031a; /* Dark background while image loads */
+}
+
+.game-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   Landing Page Field Images Animations
+   ======================================== */
+
+/* Fade in with scale animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide in from bottom */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in and slide up animation for live game character images */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Apply animations to landing field images */
+.landing-field {
+  animation: fadeInSlideDown 0.6s ease-out;
+}
+
+.landing-image-back {
+  animation: fadeInScale 0.8s ease-out 0.2s backwards;
+  will-change: opacity, transform;
+  background-color: #00031a; /* Dark background while image loads */
+}
+
+.landing-image-girl {
+  animation: slideInUp 0.8s ease-out 0.3s backwards;
+  will-change: opacity, transform;
+  background-color: #00031a; /* Dark background while image loads */
+}
+
+/* Staggered delays for landing fields */
+.landing-field:nth-child(1) .landing-image-back { animation-delay: 0.1s; }
+.landing-field:nth-child(1) .landing-image-girl { animation-delay: 0.2s; }
+.landing-field:nth-child(2) .landing-image-back { animation-delay: 0.3s; }
+.landing-field:nth-child(2) .landing-image-girl { animation-delay: 0.4s; }
+.landing-field:nth-child(3) .landing-image-back { animation-delay: 0.5s; }
+.landing-field:nth-child(3) .landing-image-girl { animation-delay: 0.6s; }
+.landing-field:nth-child(4) .landing-image-back { animation-delay: 0.7s; }
+.landing-field:nth-child(4) .landing-image-girl { animation-delay: 0.8s; }
+
+/* ========================================
+   Live Game Card Animations
+   ======================================== */
+
+/* Live game image container - no animation */
+.live-game-image {
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+/* Only animate the character image (evolution.png, asia.png, etc.) */
+.live-game-image img {
+  opacity: 0;
+  animation: fadeInSlideUp 0.8s ease-out forwards;
+  will-change: opacity, transform;
+  transition: transform 0.3s ease;
+}
+
+/* Staggered animation delays for character images */
+.live-game:nth-child(1) .live-game-image img { animation-delay: 0.1s; }
+.live-game:nth-child(2) .live-game-image img { animation-delay: 0.25s; }
+.live-game:nth-child(3) .live-game-image img { animation-delay: 0.4s; }
+.live-game:nth-child(4) .live-game-image img { animation-delay: 0.55s; }
+
+/* Hover effect - only scale the image */
+.live-game:hover .live-game-image img {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   Mobile Card Animations
+   ======================================== */
+
+/* Mobile game cards (excluding live cards) */
+.landing-game-one {
+  opacity: 0;
+  animation: fadeInScaleUp 0.5s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+/* Mobile card images */
+.landing-game-one img {
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+/* Live mobile card character images - ONLY these animate */
+.slot-mobile-card .live-mobile-card-doll1,
+.slot-mobile-card .live-mobile-card-doll2,
+.slot-mobile-card .live-mobile-card-doll3,
+.slot-mobile-card .live-mobile-card-doll4 {
+  opacity: 0;
+  animation: fadeInSlideUp 0.8s ease-out forwards;
+  will-change: opacity, transform;
+  background: none;
+  transition: transform 0.3s ease;
+}
+
+/* Staggered animation delays for live mobile character images */
+.slot-mobile-card:nth-child(1) .live-mobile-card-doll1,
+.slot-mobile-card:nth-child(1) .live-mobile-card-doll2,
+.slot-mobile-card:nth-child(1) .live-mobile-card-doll3,
+.slot-mobile-card:nth-child(1) .live-mobile-card-doll4 { animation-delay: 0.1s; }
+
+.slot-mobile-card:nth-child(2) .live-mobile-card-doll1,
+.slot-mobile-card:nth-child(2) .live-mobile-card-doll2,
+.slot-mobile-card:nth-child(2) .live-mobile-card-doll3,
+.slot-mobile-card:nth-child(2) .live-mobile-card-doll4 { animation-delay: 0.25s; }
+
+.slot-mobile-card:nth-child(3) .live-mobile-card-doll1,
+.slot-mobile-card:nth-child(3) .live-mobile-card-doll2,
+.slot-mobile-card:nth-child(3) .live-mobile-card-doll3,
+.slot-mobile-card:nth-child(3) .live-mobile-card-doll4 { animation-delay: 0.4s; }
+
+.slot-mobile-card:nth-child(4) .live-mobile-card-doll1,
+.slot-mobile-card:nth-child(4) .live-mobile-card-doll2,
+.slot-mobile-card:nth-child(4) .live-mobile-card-doll3,
+.slot-mobile-card:nth-child(4) .live-mobile-card-doll4 { animation-delay: 0.55s; }
+
+.landing-game-one:hover img {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   Landing Games List (Mobile)
+   ======================================== */
+
+/* Landing games sections */
+.landing-games-mobile {
+  animation: fadeInSlideDown 0.6s ease-out;
+}
+
+.landing-games-list-one-mobile {
+  animation: fadeInSlideDown 0.6s ease-out;
+}
+
+/* Staggered animation for mobile game items */
+.landing-game-one:nth-child(1) { animation-delay: 0.05s; }
+.landing-game-one:nth-child(2) { animation-delay: 0.1s; }
+.landing-game-one:nth-child(3) { animation-delay: 0.15s; }
+.landing-game-one:nth-child(4) { animation-delay: 0.2s; }
+.landing-game-one:nth-child(5) { animation-delay: 0.25s; }
+.landing-game-one:nth-child(6) { animation-delay: 0.3s; }
+.landing-game-one:nth-child(7) { animation-delay: 0.35s; }
+.landing-game-one:nth-child(8) { animation-delay: 0.4s; }
+.landing-game-one:nth-child(9) { animation-delay: 0.45s; }
+.landing-game-one:nth-child(10) { animation-delay: 0.5s; }
+
+/* ========================================
+   Page Title Animations
+   ======================================== */
+
+/* Page title fade in */
+.newgame-title {
+  opacity: 0;
+  animation: fadeInSlideDown 0.5s ease-out 0.2s forwards;
+}
+
+/* ========================================
+   Vendor Items Animations
+   ======================================== */
+
+/* Vendor items container */
+.newgame-items,
+.newgame-items-mobile {
+  opacity: 0;
+  animation: fadeInSlideDown 0.5s ease-out 0.3s forwards;
+}
+
+/* Individual vendor items */
+.newgame-item,
+.newgame-item-mobile {
+  opacity: 0;
+  animation: fadeInScaleUp 0.4s ease-out forwards;
+}
+
+/* Staggered delays for vendor items */
+.newgame-item:nth-child(1),
+.newgame-item-mobile:nth-child(1) { animation-delay: 0.4s; }
+.newgame-item:nth-child(2),
+.newgame-item-mobile:nth-child(2) { animation-delay: 0.45s; }
+.newgame-item:nth-child(3),
+.newgame-item-mobile:nth-child(3) { animation-delay: 0.5s; }
+.newgame-item:nth-child(4),
+.newgame-item-mobile:nth-child(4) { animation-delay: 0.55s; }
+.newgame-item:nth-child(5),
+.newgame-item-mobile:nth-child(5) { animation-delay: 0.6s; }
+.newgame-item:nth-child(6),
+.newgame-item-mobile:nth-child(6) { animation-delay: 0.65s; }
+
+/* ========================================
+   Accessibility: Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+  }
+  
+  .game-card,
+  .live-game-image img,
+  .slot-mobile-card .live-mobile-card-doll1,
+  .slot-mobile-card .live-mobile-card-doll2,
+  .slot-mobile-card .live-mobile-card-doll3,
+  .slot-mobile-card .live-mobile-card-doll4,
+  .landing-game-one,
+  .landing-field,
+  .landing-img,
+  .landing-img-mobile {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ========================================
+   Performance Optimizations
+   ======================================== */
+
+/* Use GPU acceleration */
+.game-card,
+.live-game-image img,
+.landing-field,
+.landing-img img,
+.landing-img-mobile img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+

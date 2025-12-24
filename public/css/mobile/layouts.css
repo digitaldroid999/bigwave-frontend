@@ -1,0 +1,1171 @@
+@media only screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  .page-body {
+    /* padding-top: 70px; Only header height, nav scrolls with content */
+    padding-bottom: 40vh;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 70px;
+    color: white;
+    background: linear-gradient(90.64deg, #1c1d2c 1.63%, #181c3e 99.76%);
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .header-logo {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .header-logo :first-child {
+    width: 6vw;
+    height: 6vw;
+    padding-left: 4vw;
+  }
+  .user-mobile-show {
+    width: 6vw;
+    height: 6vw;
+    padding: 0 4vw;
+    display: block;
+  }
+  .user-mobile-show.menu-toggle-icon {
+    width: 6vw;
+    height: 6vw;
+    padding: 0 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .menu-toggle-icon {
+    margin-left: 4vw;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .menu-toggle-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .menu-close-icon {
+    font-size: 8vw;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user-sign {
+    display: none;
+  }
+  .user-timezone {
+    display: none;
+  }
+  .user-info {
+    display: none;
+  }
+  .header-nav-mobile {
+    width: 100%;
+    margin-top: 70px;
+    height: 6vh;
+    background: linear-gradient(
+      270.06deg,
+      #455565 0.05%,
+      #78848f 52.43%,
+      #bac0c4 99.95%
+    );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .nav-item-change-mode {
+    width: 30vw;
+    padding: 0.5vh 2vw;
+    background: linear-gradient(
+      94.71deg,
+      rgba(85, 89, 96, 0.7) 1.13%,
+      rgba(105, 123, 155, 0.7) 100%
+    );
+    border: 0.7px solid rgba(255, 255, 255, 0.21);
+    border-radius: 10px;
+    font-family: "Roboto";
+    color: white;
+    font-style: Medium;
+    font-size: 3.6vw;
+    font-weight: 500;
+    line-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3.8vw;
+  }
+  .nav-item-change-mode :first-child {
+    margin-right: 8px;
+  }
+  .user-timezone-mobile {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-right: 2.3vw;
+  }
+  .timezone-time{
+    font-size: 12px;
+  }
+  /* mobile-Landing Customization */
+  .Landing-mobile {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .landing-img-mobile {
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    position: relative;
+    padding-top: 70px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .landing-img-mobile img {
+    /* width: 100%; */
+    /* min-width: 100%; */
+    height: 100%;
+  }
+  .landing-body {
+    width: 100%;
+    min-height: 70vh;
+
+    background: #00031a;
+    background-image: radial-gradient(
+        circle at 2vw 25vh,
+        rgba(47, 60, 245, 0.226),
+        transparent 12%
+      ),
+      radial-gradient(
+        circle at 100% calc(100% - 30vh),
+        rgba(90, 120, 255, 0.24),
+        transparent 15%
+      );
+
+    background-size: 100% 136vh; /* each tile’s width/height */
+    background-repeat: repeat; /* repeat across page */
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 40vh;
+  }
+  .mobile-login-button {
+    width: 100%;
+    background: linear-gradient(270.85deg, #007aff 0.12%, #5493f7 99.57%);
+    height: 8vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    cursor: pointer;
+  }
+  .mobile-user-info-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    /* background: linear-gradient(
+      90.19deg,
+      rgba(44, 55, 78, 0.72) 0.04%,
+      rgba(44, 55, 78, 0.3672) 101.87%
+    ); */
+    background-color: 00031A;
+    ;
+  }
+  .mobile-user-info-container .user-info {
+    display: flex !important;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 30px;
+    border-radius: 0;
+    background-color: #00031A !important;
+    gap: 0;
+  }
+  .mobile-user-info-container .user-info-item {
+    padding: 0 1.5vw;
+    gap: 8px;
+  }
+  .mobile-user-info-container .user-info-icon {
+    width: 28px;
+    height: 20px;
+  }
+  .mobile-user-info-container .user-info-label {
+    font-size: 9px;
+  }
+  .mobile-user-info-container .user-info-value {
+    font-size: 14px;
+  }
+  .mobile-user-info-container .user-info-divider {
+    height: 60%;
+    margin: 0 4px;
+  }
+
+  .landing-nav-mobile {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(
+      270.06deg,
+      #455565 0.05%,
+      #78848f 52.43%,
+      #bac0c4 99.95%
+    );
+  }
+  .landing-nav-mobile-item {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+    font-size: 13px;
+    align-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .landing-nav-mobile-item :first-child {
+    height: 4.5vh;
+  }
+  .landing-nav-mobile-item span {
+    width: 100%;
+  }
+  .landing-nav-mobile-item.active {
+    background-color: #007AFF;
+    position: relative;
+  }
+  .landing-nav-mobile-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, #00b2ff);
+  }
+  .landing-nav-mobile-item:hover {
+    background-color: rgba(0, 122, 255, 0.3);
+  }
+
+  .footer {
+    height: 36vh;
+    margin-top: -36vh;
+  }
+  .footer-logo {
+    width: 100%;
+    height: 7vh;
+    padding: 1vw;
+    margin-bottom: 1vh;
+    position: relative;
+  }
+  .footer-logo :last-child {
+    width: 7vw;
+    height: 7vw;
+    background-size: 100% 100%;
+  }
+  .footer-others {
+    width: 90%;
+    padding: 1vw;
+  }
+  .footer-copyright {
+    width: 100%;
+    font-family: Roboto;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1%;
+    text-align: center;
+    color: #ffffffbf;
+  }
+  .landing-games-mobile {
+    margin-top: 15px;
+    width: 100%;
+    height: 25vh;
+    background: linear-gradient(
+      90deg,
+      rgba(68, 76, 79, 0.4) 0%,
+      rgba(140, 156, 162, 0.4) 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .landing-games-list-title {
+    width: 95%;
+    height: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vh 0;
+  }
+  .landing-games-list-title :first-child {
+    color: white;
+    font-family: Roboto;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    /* leading-trim: NONE; */
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+  .landing-games-list-title :first-child img {
+    width: 6.5vw;
+    margin-right: 7px;
+  }
+  .landing-game-btn-seeMore {
+    width: 20vw;
+    height: 3vh;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .landing-games-list-one-mobile {
+    /* height: 18vh;
+    display: flex;
+    overflow-x: auto; */
+    display: flex; /* make it a flex container */
+    flex-wrap: nowrap; /* do NOT wrap to next line */
+    overflow-x: auto; /* allow horizontal scroll */
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    gap: 5px;
+    height: 18vh;
+    position: relative;
+    /* padding: 0 1rem; */
+  }
+
+  .landing-games-list-one-mobile::-webkit-scrollbar-thumb {
+    height: 2px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+  }
+  .landing-games-list-one-mobile::-webkit-scrollbar {
+    height: 2px;
+    background-color: #00031a00;
+  }
+  .landing-game-one {
+    flex: 0 0 auto; /* prevent flex shrink, let it keep its width */
+    width: 32vw; /* fixed card width */
+    height: 16vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    background-color: #455565;
+    color: white;
+    /* border-radius: 10px; */
+  }
+  .landing-game-one img {
+    width: 100%;
+    height: 13vh;
+    background-color: #00031a; /* Dark background while image loads */
+  }
+  .landing-game-one span {
+    width: 100%;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 8px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+  }
+  .landing-games-mobile::before {
+    content: "";
+    position: absolute;
+    width: 16vw;
+    height: 16vh;
+    top: 6vh;
+    left: 0;
+    z-index: 99;
+    background: linear-gradient(270deg, #00000000 9.72%, #111e36 100%);
+  }
+  .landing-games-mobile::after {
+    content: "";
+    position: absolute;
+    width: 16vw;
+    height: 16vh;
+    top: 6vh;
+    right: 0;
+    background: linear-gradient(270deg, #111e36 9.72%, #00000000 100%);
+  }
+
+  /* Mobile Sidebar Menu Styles */
+  .nav-menu {
+    width: 300px; /* Match desktop fixed width */
+    height: calc(100% - 70px); /* Match desktop height */
+    left: -300px; /* Match the width for proper hide animation */
+  }
+
+  .nav-lang {
+    width: 278px; /* Match desktop fixed width */
+    height: 45px; /* Match desktop height */
+    margin: 19px 11px; /* Match desktop margins */
+    background-color: #000000ad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+  }
+  .menu-black {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #000000a6;
+      z-index: 90;
+      left: 0;
+      top: 70px;
+      display: none;
+      animation: blackBoard-show 0.5s ease forwards;
+  }
+
+  .nav-lang img {
+    height: 32px; /* Match desktop */
+    margin-right: 8px;
+  }
+
+  .nav-lang svg {
+    margin-left: 8px;
+  }
+
+  .nav-menu-items {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu-item {
+    width: 100%;
+    height: 60px; /* Match desktop height */
+    transition: transform 0.3s;
+    margin: 1vh 0;
+    display: flex;
+    justify-content: flex-start; /* Match desktop alignment */
+    align-items: center;
+    padding-left: 35px; /* Match desktop padding */
+    color: white;
+    text-decoration: none;
+    font-size: 20px; /* Match desktop */
+  }
+
+  .nav-menu-item.active {
+    background: linear-gradient(90deg, #007AFF 0%, rgba(0, 122, 255, 0) 100%);
+    position: relative;
+  }
+
+  .nav-menu-item.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #00ffff, #00b2ff);
+  }
+
+  .nav-menu-item:hover {
+    animation: menu-item-show 0.8s ease forwards;
+  }
+
+  .nav-menu-item:active {
+    transform: scale(0.9);
+  }
+
+  .nav-menu-item svg {
+    width: 32px; /* Match desktop */
+    height: 32px;
+    margin-right: 15px; /* Match desktop */
+  }
+
+  .nav-menu-item img {
+    width: 32px; /* Match desktop */
+    height: 32px;
+    margin-right: 15px; /* Match desktop */
+  }
+
+  .nav-menu-item span {
+    font-size: 20px; /* Match desktop */
+    width: auto; /* Let it flow naturally like desktop */
+  }
+
+  .user-sign-btn-menu {
+    width: 158px; /* Match desktop width */
+    margin-bottom: 35px; /* Match desktop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Match desktop gap */
+  }
+
+  .user-sign-btn-menu .btn_login {
+    width: 100%; /* Full width of parent container */
+    height: 45px; /* Match desktop height */
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background: linear-gradient(90.64deg, #1c1d2c 1.63%, #181c3e 99.76%);
+    border-radius: 8px;
+    display: flex; /* Add for centering */
+    justify-content: center; /* Add for centering */
+    align-items: center; /* Add for centering */
+    cursor: pointer;
+  }
+
+  .user-sign-btn-menu .btn_login::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(93.67deg, #007aff 2.87%, #00f0ff 100%);
+    border-radius: 9px;
+    z-index: -1;
+  }
+
+  .user-sign-btn-menu span {
+    cursor: default;
+    position: relative;
+    display: block;
+    background: linear-gradient(93.67deg, #007aff 2.87%, #00f0ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 18px; /* Match desktop */
+  }
+  /* ......................................................................................... */
+  .MobileVersion-Menu {
+    width: 244px; /* Match desktop width */
+    height: 82px; /* Match desktop height */
+    margin-bottom: 52px; /* Match desktop */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-top: 2px solid #dedede73;
+  }
+
+  .menu-item-mobile {
+    width: 156px; /* Match desktop width */
+    height: 47px; /* Match desktop height */
+    border-radius: 8px; /* Use fixed value instead of vw */
+    background: linear-gradient(
+      94.71deg,
+      rgba(85, 89, 96, 0.7) 1.13%,
+      rgba(105, 123, 155, 0.7) 100%
+    );
+    border: 0.7px solid rgba(255, 255, 255, 0.21);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Roboto";
+    font-size: 14px;
+  }
+
+  .menu-item-mobile svg {
+    width: 25px; /* Match desktop */
+    height: 25px;
+    margin-right: 8px; /* Use fixed value */
+  }
+  .menu-item-mobile-mode {
+    width: 60vw;
+    height: 5vh;
+    border-radius: 2vw;
+    background: linear-gradient(
+      94.71deg,
+      rgba(85, 89, 96, 0.7) 1.13%,
+      rgba(105, 123, 155, 0.7) 100%
+    );
+    border: 0.7px solid rgba(255, 255, 255, 0.21);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Roboto";
+  }
+  .menu-item-mobile-mode img {
+    width: 5vw;
+    height: 5vw;
+    padding-right: 2vw;
+  }
+  /* NEW GAME---------------------------------------------------------------------------------- */
+  .page-title-mobile {
+    display: block;
+    background: linear-gradient(90.81deg, #00b2ff 0.46%, #00ffff 50.37%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: "Bakbak One";
+    font-weight: 400;
+    font-style: "Regular";
+    font-size: 20px;
+    line-height: 56px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: capitalize;
+  }
+  .newgame-title {
+    padding: 15px 0;
+    width: 100%;
+    height: 3.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .newgame-items-mobile {
+    width: 90%;
+    /* background-color: wheat; */
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    position: relative;
+  }
+  .newgame-items-mobile::-webkit-scrollbar {
+    height: 2px;
+    display: none;
+  }
+  .newgame-items-mobile-view {
+    /* width: 100%; */
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .newgame-item-mobile {
+    position: relative;
+    width: 31vw;
+    height: 6vh;
+    margin-right: 5px;
+    background-color: #141b22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .newgame-item-mobile :first-child {
+    display: flex;
+    justify-content: center;
+    text-wrap: nowrap;
+    width: 100%;
+    color: #00b2ff;
+    font-family: "Bakbak One";
+    font-weight: 400;
+    font-style: "Regular";
+    font-size: 12px;
+    /* line-height: 30px; */
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: capitalize;
+  }
+  .newgame-item-mobile :last-child {
+    width: 100%;
+    color: white;
+    font-family: "Bakbak One";
+    font-weight: 400;
+    font-size: 12px;
+    /* leading-trim: NONE; */
+    /* line-height: 32px; */
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .newgame-item-mobile:hover::before,
+  .newgame-item-mobile.active::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* padding: 3px; */
+    background: linear-gradient(
+      135deg,
+      #00ffff 0%,
+      transparent 20%,
+      transparent 80%,
+      #00ffff 100%
+    );
+    /* -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0); */
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: game-item-hover 0.5s ease forwards;
+    /* filter: blur( 5px ); */
+  }
+  .newgames-cards-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+  }
+  .newgames-cards-mobile img {
+    width: 100%;
+  }
+  /* -----------SLOT */
+
+  .slot-mobile-cards {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2vh;
+  }
+  .slot-mobile-card {
+    width: 94vw;
+    height: 30vh;
+    position: relative;
+    border-radius: 2.08vw;
+    overflow: hidden;
+    margin-bottom: 2vh;
+  }
+
+  @keyframes card-appear-mobile {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card-background {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 24vh;
+    border-radius: 2.08vw;
+    object-fit: cover;
+    position: absolute;
+    background-color: #00031a; /* Dark background while image loads */
+  }
+
+  .mobile-card-doll1 {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    max-width: 70%;
+    height: 28vh;
+    width: auto;
+    z-index: 3;
+  }
+  .mobile-card-doll2 {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    max-width: 70%;
+    height: 28vh;
+    width: auto;
+    z-index: 3;
+  }
+
+  .live-mobile-card-doll1 {
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+    max-width: 70%;
+    height: 28vh;
+    width: auto;
+    z-index: 3;
+    background: none;
+  }
+  .live-mobile-card-doll2 {
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    max-width: 70%;
+    height: 28vh;
+    width: auto;
+    z-index: 3;
+    background: none;
+  }
+  .live-mobile-card-doll3 {
+    position: absolute;
+    bottom: -2px;
+    left: 3px;
+    max-width: 70%;
+    height: 28vh;
+    width: auto;
+    z-index: 3;
+    background: none;
+  }
+  .live-mobile-card-doll4 {
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    max-width: 75%;
+    height: 22.5vh;
+    width: auto;
+    z-index: 3;
+    background: none;
+  }
+
+  .slot-mobile-card-black {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 24vh;
+    border-radius: 8px;
+    z-index: 1;
+    background: radial-gradient(
+      50% 50% at 53.62% 50%,
+      rgba(163, 137, 179, 0.81) 0%,
+      rgba(86, 121, 163, 0.799201) 53.99%,
+      rgba(34, 79, 167, 0.79) 100%
+    );
+  }
+
+  .slot-mobile-card-black::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #bfecff, #ececec80, #ffffff00);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .slot-mobile-card-content1 {
+    position: absolute;
+    right: 15px;
+    bottom: 6vh;
+    z-index: 4;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 42vw;
+    gap: 15px;
+  }
+  .slot-mobile-card-content2 {
+    position: absolute;
+    left: 15px;
+    bottom: 6vh;
+    z-index: 4;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 42vw;
+    gap: 15px;
+  }
+
+  .slot-mobile-card-title {
+    /* font-size: 18px;
+    font-weight: 700;
+    color: white; */
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+    /* letter-spacing: 1.5px;
+    text-align: center; */
+    width: 42vw;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 5.5vw;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .slot-mobile-play-btn {
+    box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+
+    background: linear-gradient(94.37deg, #0773f1 10.35%, #00b2ff 93.4%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    transform: skewX(-20deg);
+    position: relative;
+  }
+
+  .slot-mobile-play-btn:hover {
+    background: linear-gradient(135deg, #009fd1 0%, #0077b8 100%);
+  }
+
+  .slot-mobile-play-btn > * {
+    transform: skewX(20deg);
+    display: inline-block;
+  }
+
+  .slot-mobile-play-btn .play-icon {
+    font-size: 16px;
+  }
+  .live-games-mobile {
+    display: flex;
+  }
+  /* ------------------------------------------------------------------------------------------- */
+  /* Hidden PC modes */
+
+  .btn_login{
+    display: none;
+  }
+  .header-nav {
+    display: none;
+  }
+  .Landing {
+    display: none;
+  }
+  .footer-links {
+    display: none;
+  }
+  .menu-item-mobile {
+    display: none;
+  }
+  .landing-img {
+    display: none;
+  }
+  .newgame-title :last-child {
+    display: none;
+  }
+  .newgame-items {
+    display: none;
+  }
+  .newgames-cards {
+    display: none;
+  }
+  .page-title {
+    display: none;
+  }
+  .live-games {
+    display: none;
+  }
+  /* --------SLOT-HIDDEN------ */
+  .slot-cards {
+    display: none;
+  }
+
+  /* Loading and No Games - Mobile Styles */
+  .loading-container {
+    min-height: 200px;
+  }
+
+  .loading-text {
+    font-size: 4vw;
+  }
+
+  .no-games-container {
+    min-height: 200px;
+  }
+
+  .no-games-icon {
+    font-size: 12vw;
+  }
+
+  .no-games-text {
+    font-size: 5vw;
+  }
+
+  /* Game Card Mobile Styles */
+  .new-game-cards{
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .game-card {
+    width: 30% !important;
+    height: 150px !important;
+    max-width: 200px !important;
+  }
+
+  .game-card img {
+    height: 85% !important;
+  }
+
+  .game-card span {
+    font-size: 10px !important;
+  }
+
+  /* Game Dialog Mobile Styles */
+  .game-dialog {
+    width: 95% !important;
+    height: 95vh !important;
+    max-height: none !important;
+    border-radius: 15px !important;
+  }
+
+  .game-dialog-back-btn {
+    width: 40px !important;
+    height: 40px !important;
+    top: 1% !important;
+    left: 2% !important;
+    font-size: 20px !important;
+  }
+
+  .game-dialog-header {
+    height: 50px !important;
+    padding: 0 60px 0 50px !important;
+  }
+
+  .game-dialog-title {
+    font-size: 18px !important;
+  }
+
+  .game-dialog-content {
+    padding: 50px 0 0 0 !important;
+    overflow: hidden !important;
+  }
+
+  .game-dialog-iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block !important;
+  }
+
+  .game-dialog-image-container {
+    max-width: 100% !important;
+    margin-bottom: 30px !important;
+  }
+
+  .game-dialog-placeholder {
+    max-width: 100% !important;
+    height: 250px !important;
+  }
+
+  .ufo-body {
+    width: 180px !important;
+    height: 90px !important;
+  }
+
+  .ufo-dome {
+    width: 110px !important;
+    height: 55px !important;
+    top: -30px !important;
+  }
+
+  .game-dialog-message {
+    font-size: 14px !important;
+    margin-bottom: 30px !important;
+    padding: 0 10px !important;
+  }
+
+  .game-dialog-info {
+    max-width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .game-dialog-info-item {
+    padding: 12px !important;
+  }
+
+  .game-dialog-info-label {
+    font-size: 12px !important;
+  }
+
+  .game-dialog-info-value {
+    font-size: 12px !important;
+  }
+  .header-logo div{
+    display: none;
+  }
+
+  /* Notification Mobile Styles */
+  .notification {
+    top: 80px !important;
+    right: 10px !important;
+    left: 10px !important;
+  }
+
+  .notification-content {
+    min-width: auto !important;
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+  }
+
+  .notification-close {
+    font-size: 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+}

@@ -1,0 +1,77 @@
+[
+    {
+        "vendorCode": "CQ9-JP",
+        "vendorName": "CQ9-JP",
+        "vendorType": "SLOT"
+    },
+    {
+        "vendorCode": "GameArt-JP",
+        "vendorName": "GameArt-JP",
+        "vendorType": "SLOT"
+    },
+    {
+        "vendorCode": "Netent-JP",
+        "vendorName": "Netent-JP",
+        "vendorType": "SLOT"
+    },
+    {
+        "vendorCode": "NolimitCity-JP",
+        "vendorName": "NolimitCity-JP",
+        "vendorType": "SLOT"
+    },
+    {
+        "vendorCode": "dream",
+        "vendorName": "dream",
+        "vendorType": "CASINO"
+    },
+    {
+        "vendorCode": "Redtiger-JP",
+        "vendorName": "Redtiger-JP",
+        "vendorType": "SLOT"
+    },
+    {
+        "vendorCode": "RelaxGaming-JP",
+        "vendorName": "RelaxGaming-JP",
+        "vendorType": "SLOT"
+    },
+    {
+        "vendorCode": "MicroGamingSlot-JP",
+        "vendorName": "MicroGamingSlot-JP",
+        "vendorType": "SLOT"
+    },
+    {
+        "vendorCode": "MicroGamingPlus-JP",
+        "vendorName": "MicroGamingPlus-JP",
+        "vendorType": "CASINO"
+    },
+    {
+        "vendorCode": "Booongo-JP",
+        "vendorName": "Booongo-JP",
+        "vendorType": "SLOT"
+    },
+    {
+        "vendorCode": "BlueprintGaming-JP",
+        "vendorName": "BlueprintGaming-JP",
+        "vendorType": "SLOT"
+    },
+    {
+        "vendorCode": "BigTimeGaming-JP",
+        "vendorName": "BigTimeGaming-JP",
+        "vendorType": "SLOT"
+    },
+    {
+        "vendorCode": "SkywindLive-JP",
+        "vendorName": "SkywindLive-JP",
+        "vendorType": "CASINO"
+    },
+    {
+        "vendorCode": "Evolution-JP",
+        "vendorName": "Evolution-JP",
+        "vendorType": "CASINO"
+    },
+    {
+        "vendorCode": "Wazdan-JP",
+        "vendorName": "Wazdan-JP",
+        "vendorType": "SLOT"
+    }
+]

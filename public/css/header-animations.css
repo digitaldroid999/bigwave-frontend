@@ -1,0 +1,457 @@
+/* Header Dynamic UI Animations */
+
+/* ========================================
+   Phase 1: Authentication State Transitions
+   ======================================== */
+
+/* Fade in animation for login form */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from right for user info */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade out animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Apply animations to login form */
+.user-sign {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Apply animations to user info */
+.user-info {
+  animation: slideInRight 0.5s ease-out;
+}
+
+/* ========================================
+   Phase 1.2: Input Field Interactions
+   ======================================== */
+
+/* Input focus animations */
+.user-name input,
+.user-password input {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.user-name input:focus,
+.user-password input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(0, 178, 255, 0.4);
+  border-color: #00b2ff;
+  background-color: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+.user-name input:hover,
+.user-password input:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 178, 255, 0.3);
+}
+
+/* Error state for inputs */
+.user-name input.error,
+.user-password input.error {
+  animation: shake 0.5s ease-in-out;
+  border-color: #ff4444;
+  box-shadow: 0 0 10px rgba(255, 68, 68, 0.3);
+}
+
+/* Shake animation for errors */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-8px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(8px);
+  }
+}
+
+/* Valid input state */
+.user-name input.valid,
+.user-password input.valid {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+/* Input placeholder styling */
+.user-name input::placeholder,
+.user-password input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  transition: opacity 0.3s ease;
+}
+
+.user-name input:focus::placeholder,
+.user-password input:focus::placeholder {
+  opacity: 0.7;
+}
+
+/* ========================================
+   Phase 1.3: Button Interactions - Enhanced
+   ======================================== */
+
+/* Button hover animations - smooth gradient transition */
+.btn_login {
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: visible;
+  will-change: background, transform;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+
+/* Ensure text stays visible during all states */
+.btn_login span {
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s ease, color 0.3s ease, -webkit-text-fill-color 0.3s ease;
+  pointer-events: none;
+  /* Ensure initial visibility - use white for guaranteed visibility */
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Smooth gradient transition on hover - no size change */
+.btn_login:hover:not(:disabled):not(.loading) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 122, 255, 0.5);
+}
+
+/* Active state - slight press down, no size increase */
+.btn_login:active:not(:disabled):not(.loading) {
+  transform: translateY(0);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn_login:active:not(:disabled):not(.loading)::before {
+  box-shadow: 0 2px 10px rgba(0, 122, 255, 0.4);
+}
+
+/* Button ripple effect - subtle */
+.btn_login::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.btn_login:active:not(:disabled):not(.loading)::after {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Loading button state - preserve text visibility */
+.btn_login.loading {
+  cursor: not-allowed;
+  opacity: 0.85;
+  pointer-events: none;
+  transform: none !important;
+}
+
+.btn_login.loading span {
+  opacity: 1;
+  color: white;
+}
+
+.btn_login.loading::before {
+  background: linear-gradient(93.67deg, #007AFF 2.87%, #00F0FF 100%);
+}
+
+/* Disabled button state */
+.btn_login:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+  transform: none !important;
+}
+
+/* Focus state for accessibility */
+.btn_login:focus {
+  outline: 2px solid #00F0FF;
+  outline-offset: 3px;
+}
+
+.btn_login:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ========================================
+   Phase 2.3: Error Handling & Notifications
+   ======================================== */
+
+/* Error message slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 100px;
+  }
+}
+
+/* Error message slide up (dismiss) */
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 100px;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+    max-height: 0;
+  }
+}
+
+.header-login-error {
+  animation: slideDown 0.3s ease-out;
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: rgba(255, 68, 68, 0.1);
+  border-left: 3px solid #ff4444;
+  border-radius: 4px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-login-error::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Error icon pulse */
+.header-login-error.dismissing {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+/* ========================================
+   Phase 2.1: Live Balance Updates
+   ======================================== */
+
+/* Balance increase animation (green flash) */
+@keyframes balanceIncrease {
+  0% {
+    color: white;
+    transform: scale(1);
+  }
+  50% {
+    color: #4caf50;
+    transform: scale(1.15);
+  }
+  100% {
+    color: white;
+    transform: scale(1);
+  }
+}
+
+/* Balance decrease animation (red flash) */
+@keyframes balanceDecrease {
+  0% {
+    color: white;
+    transform: scale(1);
+  }
+  50% {
+    color: #ff4444;
+    transform: scale(1.15);
+  }
+  100% {
+    color: white;
+    transform: scale(1);
+  }
+}
+
+/* Pulse animation for balance changes */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.user-info-value.balance-updated {
+  animation: pulse 0.6s ease-in-out;
+}
+
+.user-info-value.balance-increase {
+  animation: balanceIncrease 0.8s ease-in-out;
+}
+
+.user-info-value.balance-decrease {
+  animation: balanceDecrease 0.8s ease-in-out;
+}
+
+/* ========================================
+   Phase 3.2: Navigation Highlights
+   ======================================== */
+
+/* Active nav item underline animation */
+.nav-item.active::after {
+  animation: slideInUnderline 0.3s ease-out;
+}
+
+@keyframes slideInUnderline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Nav item hover effect */
+.nav-item {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-item:hover:not(.active) {
+  background-color: rgba(0, 122, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-item:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   Phase 3.3: Logo Interactions
+   ======================================== */
+
+.header-logo img {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.header-logo img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.header-logo img:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+/* ========================================
+   Loading Spinner Animation
+   ======================================== */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ========================================
+   Accessibility: Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   Responsive Animations
+   ======================================== */
+
+@media only screen and (max-width: 1023px) {
+  .user-sign {
+    animation-duration: 0.3s;
+  }
+  
+  .user-info {
+    animation-duration: 0.4s;
+  }
+}
+
