@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 import gamesDataJson from "../../temps/games.json";
 import vendorsDataJson from "../../temps/vendors.json";
@@ -9,7 +8,6 @@ import UserInfo from "../../components/layouts/userInfo";
 import GameDialog from "../../components/common/gameDialog";
 
 export default function NewGame({ showLogin, isAuthenticated, userData, userBalance, onSignOut }){
-    const navigate = useNavigate() ;
     const [selectedVendorCode, setSelectedVendorCode] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [vendorsData, setVendorsData] = useState([]);
