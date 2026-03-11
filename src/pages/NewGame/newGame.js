@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
+import gamesDataJson from "../../temps/games.json";
+import vendorsDataJson from "../../temps/vendors.json";
 import LandingNavBar from "../../components/common/landingNavBar";
 import GameCard from "../../components/common/gameCard";
 import UserInfo from "../../components/layouts/userInfo";
@@ -41,44 +43,54 @@ export default function NewGame({ showLogin, isAuthenticated, userData, userBala
         navigate( link, { replace : true } ) ;
     }
     
-    // Fetch vendors and games on component mount
+    // Use local games.json and vendors.json (backend API call commented out below)
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                setIsInitialLoading(true);
-                const [vendorsResponse, gamesResponse] = await Promise.all([
-                    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/vendors`),
-                    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/games`)
-                ]);
-                
-                // Handle response - check if data is directly an array or wrapped in an object
-                const vendors = Array.isArray(vendorsResponse.data) 
-                    ? vendorsResponse.data 
-                    : (vendorsResponse.data?.data || vendorsResponse.data?.vendors || []);
-                const games = Array.isArray(gamesResponse.data) 
-                    ? gamesResponse.data 
-                    : (gamesResponse.data?.data || gamesResponse.data?.games || []);
-                
-                setVendorsData(Array.isArray(vendors) ? vendors : []);
-                setGamesData(Array.isArray(games) ? games : []);
-                
-                // Initial load: filter by recent === 1
-                const recentGames = Array.isArray(games) 
-                    ? games.filter(game => game.recent === 1)
-                    : [];
-                setFilteredGames(recentGames);
-                setDisplayedCount(12); // Reset displayed count when data changes
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                setVendorsData([]);
-                setGamesData([]);
-                setFilteredGames([]);
-            } finally {
-                setIsInitialLoading(false);
-            }
-        };
-        
-        fetchData();
+        setIsInitialLoading(true);
+        const vendors = Array.isArray(vendorsDataJson) ? vendorsDataJson : [];
+        const games = Array.isArray(gamesDataJson) ? gamesDataJson : [];
+        setVendorsData(vendors);
+        setGamesData(games);
+
+        // Initial load: filter by recent === 1
+        const recentGames = games.filter(game => game.recent === 1);
+        setFilteredGames(recentGames);
+        setDisplayedCount(12);
+        setIsInitialLoading(false);
+
+        // --- Backend API call (commented out) ---
+        // const fetchData = async () => {
+        //     try {
+        //         setIsInitialLoading(true);
+        //         const [vendorsResponse, gamesResponse] = await Promise.all([
+        //             axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/vendors`),
+        //             axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/games`)
+        //         ]);
+        //
+        //         const vendors = Array.isArray(vendorsResponse.data)
+        //             ? vendorsResponse.data
+        //             : (vendorsResponse.data?.data || vendorsResponse.data?.vendors || []);
+        //         const games = Array.isArray(gamesResponse.data)
+        //             ? gamesResponse.data
+        //             : (gamesResponse.data?.data || gamesResponse.data?.games || []);
+        //
+        //         setVendorsData(Array.isArray(vendors) ? vendors : []);
+        //         setGamesData(Array.isArray(games) ? games : []);
+        //
+        //         const recentGames = Array.isArray(games)
+        //             ? games.filter(game => game.recent === 1)
+        //             : [];
+        //         setFilteredGames(recentGames);
+        //         setDisplayedCount(12);
+        //     } catch (error) {
+        //         console.error("Error fetching data:", error);
+        //         setVendorsData([]);
+        //         setGamesData([]);
+        //         setFilteredGames([]);
+        //     } finally {
+        //         setIsInitialLoading(false);
+        //     }
+        // };
+        // fetchData();
     }, []);
 
     const handleVendorClick = (vendorCode) => {

@@ -562,16 +562,16 @@
     width: 100%;
     position: absolute;
     bottom: 0;
-    background-color: #00031a; /* Dark background while image loads */
     left: 0;
+    z-index: 0;
 }
 
 .landing-image-girl {
     position: absolute;
     height: 60vh;
     bottom: 10%;
-    background-color: #00031a; /* Dark background while image loads */
     left: 5%;
+    z-index: 1;
 }
 
 .fix-img1 {

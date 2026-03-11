@@ -6,8 +6,9 @@ import PlayButton from '../common/playButton';
 import { CiHome } from 'react-icons/ci';
 import { MdLiveTv } from 'react-icons/md';
 import UserInfo from './userInfo';
-import axios from 'axios';
+// import axios from 'axios';
 import GameDialog from '../common/gameDialog';
+import gamesDataJson from '../../temps/games.json';
 
 const itemData = [
     {
@@ -48,44 +49,63 @@ export default function Landing({ showLogin, isAuthenticated, userData, userBala
     const [selectedGame, setSelectedGame] = useState(null);
     const [showGameDialog, setShowGameDialog] = useState(false);
     
-    // Fetch games data
+    // Use local games.json (backend API call commented out below)
     useEffect(() => {
-        const fetchGames = async () => {
-            try {
-                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/games`);
-                const games = Array.isArray(response.data) 
-                    ? response.data 
-                    : (response.data?.data || response.data?.games || []);
-                
-                setGamesData(Array.isArray(games) ? games : []);
-                
-                // Filter games based on conditions
-                // New Game: recent === 1
-                const newGamesFiltered = games.filter(game => game.recent === 1).slice(0, 10);
-                setNewGames(newGamesFiltered);
-                
-                // Favorite Game: recommended === 1 (or favourite === 1 as fallback)
-                const favoriteGamesFiltered = games.filter(game => 
-                    game.recommended === 1 || game.favourite === 1
-                ).slice(0, 10);
-                setFavoriteGames(favoriteGamesFiltered);
-                
-                // Slot game: gameType === 'slot' or 'SLOT'
-                const slotGamesFiltered = games.filter(game => 
-                    game.gameType?.toLowerCase() === 'slot'
-                ).slice(0, 10);
-                setSlotGames(slotGamesFiltered);
-                
-                // Live: all games (first 10)
-                const liveGamesFiltered = games.slice(0, 10);
-                setLiveGames(liveGamesFiltered);
-            } catch (error) {
-                console.error("Error fetching games:", error);
-                setGamesData([]);
-            }
-        };
-        
-        fetchGames();
+        const games = Array.isArray(gamesDataJson) ? gamesDataJson : [];
+        setGamesData(games);
+
+        // Filter games based on conditions
+        // New Game: recent === 1
+        const newGamesFiltered = games.filter(game => game.recent === 1).slice(0, 10);
+        setNewGames(newGamesFiltered);
+
+        // Favorite Game: recommended === 1 (or favourite === 1 as fallback)
+        const favoriteGamesFiltered = games.filter(game =>
+            game.recommended === 1 || game.favourite === 1
+        ).slice(0, 10);
+        setFavoriteGames(favoriteGamesFiltered);
+
+        // Slot game: gameType === 'slot' or 'SLOT'
+        const slotGamesFiltered = games.filter(game =>
+            game.gameType?.toLowerCase() === 'slot'
+        ).slice(0, 10);
+        setSlotGames(slotGamesFiltered);
+
+        // Live: all games (first 10)
+        const liveGamesFiltered = games.slice(0, 10);
+        setLiveGames(liveGamesFiltered);
+
+        // --- Backend API call (commented out) ---
+        // const fetchGames = async () => {
+        //     try {
+        //         const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/games`);
+        //         const games = Array.isArray(response.data)
+        //             ? response.data
+        //             : (response.data?.data || response.data?.games || []);
+        //
+        //         setGamesData(Array.isArray(games) ? games : []);
+        //
+        //         const newGamesFiltered = games.filter(game => game.recent === 1).slice(0, 10);
+        //         setNewGames(newGamesFiltered);
+        //
+        //         const favoriteGamesFiltered = games.filter(game =>
+        //             game.recommended === 1 || game.favourite === 1
+        //         ).slice(0, 10);
+        //         setFavoriteGames(favoriteGamesFiltered);
+        //
+        //         const slotGamesFiltered = games.filter(game =>
+        //             game.gameType?.toLowerCase() === 'slot'
+        //         ).slice(0, 10);
+        //         setSlotGames(slotGamesFiltered);
+        //
+        //         const liveGamesFiltered = games.slice(0, 10);
+        //         setLiveGames(liveGamesFiltered);
+        //     } catch (error) {
+        //         console.error("Error fetching games:", error);
+        //         setGamesData([]);
+        //     }
+        // };
+        // fetchGames();
     }, []);
     
     const handleGameCardClick = (game) => {

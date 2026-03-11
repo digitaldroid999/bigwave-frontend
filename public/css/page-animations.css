@@ -168,13 +168,11 @@
 .landing-image-back {
   animation: fadeInScale 0.8s ease-out 0.2s backwards;
   will-change: opacity, transform;
-  background-color: #00031a; /* Dark background while image loads */
 }
 
 .landing-image-girl {
   animation: slideInUp 0.8s ease-out 0.3s backwards;
   will-change: opacity, transform;
-  background-color: #00031a; /* Dark background while image loads */
 }
 
 /* Staggered delays for landing fields */
