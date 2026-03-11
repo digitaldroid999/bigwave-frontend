@@ -1,28 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { IoIosArrowBack } from "react-icons/io";
+
+function generateEventId() {
+  return Array.from({ length: 32 }, () =>
+    Math.floor(Math.random() * 16).toString(16)
+  ).join('');
+}
+
+async function getClientIp() {
+  try {
+    const response = await axios.get('https://api.ipify.org?format=json');
+    return response.data.ip;
+  } catch (error) {
+    try {
+      const serverUrl = new URL(process.env.REACT_APP_BACKEND_URL);
+      return serverUrl.hostname;
+    } catch {
+      return '155.254.19.131';
+    }
+  }
+}
 
 export default function GameDialog({ isOpen, onClose, gameData }) {
   const [gameInfo, setGameInfo] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    if (isOpen && gameData) {
-      fetchGameInfo();
-      // Disable body scrolling when dialog is open
-      document.body.style.overflow = 'hidden';
-    } else {
-      // Re-enable body scrolling when dialog is closed
-      document.body.style.overflow = '';
-    }
-    
-    // Cleanup: re-enable scrolling when component unmounts
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen, gameData]);
-
-  const fetchGameInfo = async () => {
+  const fetchGameInfo = useCallback(async () => {
     setIsLoading(true);
     try {
       const token = localStorage.getItem('authToken');
@@ -110,29 +114,20 @@ export default function GameDialog({ isOpen, onClose, gameData }) {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [gameData]);
 
-  const generateEventId = () => {
-    return Array.from({ length: 32 }, () => 
-      Math.floor(Math.random() * 16).toString(16)
-    ).join('');
-  };
-
-  const getClientIp = async () => {
-    try {
-      // Try to get IP from a service or use a default
-      const response = await axios.get('https://api.ipify.org?format=json');
-      return response.data.ip;
-    } catch (error) {
-      // Fallback to server URL hostname
-      try {
-        const serverUrl = new URL(process.env.REACT_APP_BACKEND_URL);
-        return serverUrl.hostname;
-      } catch {
-        return '155.254.19.131'; // Ultimate fallback
-      }
+  useEffect(() => {
+    if (isOpen && gameData) {
+      fetchGameInfo();
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
-  };
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, gameData, fetchGameInfo]);
 
   if (!isOpen) return null;
 

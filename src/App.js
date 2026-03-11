@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 // import { BrowserRouter, Link, Route, Switch } from 'react-router-dom' ;
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layouts/header';
 import Landing from './components/layouts/landing';
 import Footer from './components/layouts/footer';
@@ -210,7 +210,7 @@ function App() {
       echo.leave(channelName);
       console.log(`[Echo] Left private channel ${channelName}`);
     };
-  }, [isAuthenticated, userData?.id]);
+  }, [isAuthenticated, userData]);
 
   const handleLoginSuccess = (userData, token, balanceData) => {
     setIsAuthenticated(true);

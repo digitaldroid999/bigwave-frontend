@@ -85,12 +85,12 @@ export default function Live({ showLogin, isAuthenticated, userData, userBalance
         <div className="live-games">
           {liveData.map((item, index) => {
             // Create a game object with necessary properties for the dialog
-            const gameData = {
-              gameCode: item.gameCode || item.name?.toLowerCase().replace(/\s+/g, '') || `live${index}`,
-              vendorCode: item.vendorCode || 'Evolution-JP',
-              gameTitle: item.name,
-              thumbnail: item.image
-            };
+            // const gameData = {
+            //   gameCode: item.gameCode || item.name?.toLowerCase().replace(/\s+/g, '') || `live${index}`,
+            //   vendorCode: item.vendorCode || 'Evolution-JP',
+            //   gameTitle: item.name,
+            //   thumbnail: item.image
+            // };
             return (
               <LiveGameCard index={index} data={item} link={"/live/gamedemo"} />
             );
@@ -99,15 +99,17 @@ export default function Live({ showLogin, isAuthenticated, userData, userBalance
         <div className="slot-mobile-cards">
           {
             liveData1.map( ( item, index ) => {
-              // Create a game object with necessary properties for the dialog
-              const gameData = {
-                gameCode: item.gameCode || item.name?.toLowerCase().replace(/\s+/g, '') || `live${index}`,
-                vendorCode: item.vendorCode || 'Evolution-JP',
-                gameTitle: item.name,
-                thumbnail: item.image
-              };
               return (
-                <div key={index} onClick={() => handleGameCardClick(gameData)} style={{ cursor: 'pointer' }}>
+                <div
+                  key={index}
+                  onClick={() => handleGameCardClick({
+                    gameCode: item.gameCode || item.name?.toLowerCase().replace(/\s+/g, '') || `live${index}`,
+                    vendorCode: item.vendorCode || 'Evolution-JP',
+                    gameTitle: item.name,
+                    thumbnail: item.image
+                  })}
+                  style={{ cursor: 'pointer' }}
+                >
                   <LiveMobileCard index={index} title={item.name} image={item.image} />
                 </div>
               );

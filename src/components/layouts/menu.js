@@ -1,10 +1,6 @@
 import { FaAngleDown } from "react-icons/fa"
-import { CiHome } from "react-icons/ci"
-import { MdLiveTv } from "react-icons/md"
 import { Link, useLocation } from "react-router-dom"
-import { CiMobile3 } from "react-icons/ci"
 import { useEffect, useState } from "react"
-import { FaCircleUser } from "react-icons/fa6"
 import axios from "axios"
 
 const itemData = [

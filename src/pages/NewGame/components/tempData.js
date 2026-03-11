@@ -159,7 +159,7 @@ const gameCards = [
     },
 ] ;
 
-const favoriteCards = [
+const _favoriteCards = [
     {
         title : 'Double Dragons',
         url : '/img/newGame/Starlight Princess.png'

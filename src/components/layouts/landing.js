@@ -3,8 +3,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { RiSearchLine } from "react-icons/ri";
 import { landingDatas } from './landingComponents/landingDatas';
 import PlayButton from '../common/playButton';
-import { CiHome } from 'react-icons/ci';
-import { MdLiveTv } from 'react-icons/md';
 import UserInfo from './userInfo';
 // import axios from 'axios';
 import GameDialog from '../common/gameDialog';
@@ -41,7 +39,6 @@ export default function Landing({ showLogin, isAuthenticated, userData, userBala
         navigate( link, { replace : true } ) ;
     }
     
-    const [gamesData, setGamesData] = useState([]);
     const [newGames, setNewGames] = useState([]);
     const [favoriteGames, setFavoriteGames] = useState([]);
     const [slotGames, setSlotGames] = useState([]);
@@ -52,7 +49,6 @@ export default function Landing({ showLogin, isAuthenticated, userData, userBala
     // Use local games.json (backend API call commented out below)
     useEffect(() => {
         const games = Array.isArray(gamesDataJson) ? gamesDataJson : [];
-        setGamesData(games);
 
         // Filter games based on conditions
         // New Game: recent === 1

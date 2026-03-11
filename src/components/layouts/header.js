@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Menu from './menu' ;
 import { useNavigate, useLocation } from "react-router-dom";
-import { FaCircleUser } from "react-icons/fa6";
-import { MdLiveTv } from "react-icons/md";
-import { CiHome } from "react-icons/ci";
 import { FaAngleDown } from "react-icons/fa";
-import { CiMobile3 } from "react-icons/ci";
 import UserInfo from "./userInfo";
 import { performLogin } from "../../utils/auth";
 import LoadingSpinner from "../common/loadingSpinner";
@@ -41,7 +37,6 @@ const itemData = [
 
 
 export default function Header({ showLogin, isAuthenticated, userData, userBalance, onSignOut, onLoginSuccess }) {
-    const [ time, setTime ] = useState( new Date() ) ;
     const navigate = useNavigate() ;
     const location = useLocation() ;
     const navigatePage = ( link ) => e => {

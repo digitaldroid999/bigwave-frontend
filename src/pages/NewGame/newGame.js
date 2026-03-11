@@ -38,11 +38,7 @@ export default function NewGame({ showLogin, isAuthenticated, userData, userBala
             setIsLoadingMore(false);
         }, 500);
     };
-    
-    const navigatePage = ( link ) => e => {
-        navigate( link, { replace : true } ) ;
-    }
-    
+
     // Use local games.json and vendors.json (backend API call commented out below)
     useEffect(() => {
         setIsInitialLoading(true);
